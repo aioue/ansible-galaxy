@@ -1,0 +1,25 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'ansible-galaxy init'
+      'command': 'ansible-galaxy:init'
+    }
+  ]
+  '.tree-view': [
+    {label: 'ansible-galaxy init', command: 'ansible-galaxy:init'}
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'ansible-galaxy'
+      'submenu': [
+        {
+          'label': 'init'
+          'command': 'ansible-galaxy:init'
+        }
+      ]
+    ]
+  }
+]
