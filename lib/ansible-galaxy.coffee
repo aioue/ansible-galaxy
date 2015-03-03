@@ -1,5 +1,3 @@
-FileView = require('./file-view')
-
 GalaxyDialog = null  # Defer requiring until actually needed
 
 module.exports =
