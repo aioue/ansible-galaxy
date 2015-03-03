@@ -1,5 +1,7 @@
 FileView = require('./file-view')
 
+GalaxyDialog = null  # Defer requiring until actually needed
+
 module.exports =
   activate: ->
     console.log "ansible-galaxy activated"
@@ -8,28 +10,21 @@ module.exports =
       => @galaxize()
 
   galaxize: ->
-    f = new FileView()
-    console.log f
-    atom.workspace.addTopPanel(item: f)
+    atom
+      .packages
+      .activatePackage('tree-view')
+      .then (treeViewPackage) ->
+        treeView = treeViewPackage.mainModule.treeView
+        selectedPath = treeView.selectedPath
 
-    # Disable this for a moment.
-    if false
-      atom
-        .packages
-        .activatePackage('tree-view')
-        .then (treeViewPackage) ->
-          treeView = treeViewPackage.mainModule.treeView
-          console.log "selectedPath = " + treeView.selectedPath
+        GalaxyDialog ?= require './galaxy-dialog'
+        dialog = new GalaxyDialog(selectedPath)
 
-          exec = require('child_process').exec
+        dialog.on 'directory-chosen', (event, chosenPath) ->
+          console.log "directory chosen", chosenPath
+          # Do your stuff here.
+          false
 
-          child = exec(
-            "ls -la",
-            {},
-            (error, stdout, stderr) ->
-              console.log 'execution completed'
-              console.log "stdout: " + stdout
-              console.log "stderr: " + stderr
-              console.log "exec error: " + error  if error isnt null
-              return
-          )
+        dialog.attach()
+
+
