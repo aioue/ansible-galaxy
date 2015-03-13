@@ -16,7 +16,7 @@ class GalaxyDialog extends Dialog
     relativeDirectoryPath += path.sep if relativeDirectoryPath.length > 0
 
     super
-      prompt: "Enter the path for the new ansible-galaxy folder."
+      prompt: "Enter the path for the new ansible-galaxy role."
       initialPath: relativeDirectoryPath
       select: false
       iconClass: 'icon-file-directory-create'
