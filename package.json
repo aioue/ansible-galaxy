@@ -1,14 +1,14 @@
 {
   "name": "ansible-galaxy",
   "main": "./lib/ansible-galaxy",
-  "version": "0.0.0",
-  "description": "A short description of your package",
+  "version": "0.0.1",
+  "description": "Run ansible-galaxy init to create a new role",
   "activationCommands": {
     "atom-workspace": [
-      "ansible-galaxy:galaxize"
+      "ansible-galaxy:init"
     ]
   },
-  "repository": "https://github.com/atom/ansible-galaxy",
+  "repository": "https://github.com/aioue/ansible-galaxy",
   "license": "MIT",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"

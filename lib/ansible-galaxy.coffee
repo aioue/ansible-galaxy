@@ -10,10 +10,10 @@ module.exports =
   activate: ->
     console.log "ansible-galaxy activated"
     atom.commands.add 'atom-workspace',
-      'ansible-galaxy:galaxize',
-      => @galaxize()
+      'ansible-galaxy:init',
+      => @init()
 
-  galaxize: ->
+  init: ->
     atom
       .packages
       .activatePackage('tree-view')
