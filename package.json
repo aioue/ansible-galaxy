@@ -1,7 +1,7 @@
 {
   "name": "ansible-galaxy",
   "main": "./lib/ansible-galaxy",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Run ansible-galaxy init to create a new role",
   "activationCommands": {
     "atom-workspace": [
