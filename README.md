@@ -2,4 +2,4 @@
 
 Run ansible-galaxy init from the tree-view to create a role.
 
-![](http://s29.postimg.org/u46cbukk7/Screen_Shot_2015_06_12_at_15_01_13.png)
+![](http://s11.postimg.org/7xm6cueub/Screen_Shot_2015_06_12_at_15_03_04.png)
